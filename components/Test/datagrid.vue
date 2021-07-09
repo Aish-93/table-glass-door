@@ -23,8 +23,9 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(temp, index) in datas" :key="index" class="spacers" @click="marker" :class="bean.length > 0 ? 'pick' : '' ">
-          <td class="spacers " @click="picker(index)" :class="dream.length > 0 ? 'pick' :'' ">
+        <tr v-for="(temp, index) in datas" :key="index" class="spacers" @click="picker(index)"
+        :class="bean.length > 0 ? 'pick' : '' ">
+          <td class="spacers " >
             <input type="checkbox" id="mybox" value="checked"  :checked="dream" ></td>
 
            
@@ -69,7 +70,7 @@ export default {
     return {
       striker:false,
       bean:'',
-      kill:9,
+      kill:[],
       dream:'',
       datas: [
         {
@@ -143,13 +144,13 @@ export default {
 
       },
       picker(index){
-        this.kill = this.index;
-        if(this.kill = this.index){
-          this.dream = "checked"
-        }
-        console.log(this.kill)
+        this.kill.push(index);
+        console.log(this.kill);
 
-      }
+      },
+      singleMarker(){
+        
+      },
   }
 };
 </script>
